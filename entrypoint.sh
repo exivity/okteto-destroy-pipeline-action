@@ -4,7 +4,7 @@ set -e
 name=$1
 namespace=$2
 log_level=$3
-additional_params=$4
+remove_volumes=$4  # New parameter for remove volumes
 
 params=""
 if [ ! -z "$namespace" ]; then
@@ -27,8 +27,10 @@ if [ "${RUNNER_DEBUG}" = "1" ]; then
     log_level="--log-level debug"
 fi
 
-# Construct the full command with optional additional parameters
-command="okteto pipeline destroy $log_level --name \"${name}\" ${params} --wait ${additional_params}"
+# Check if remove volumes is set to true and add the -v flag
+if [ "$remove_volumes" = "true" ]; then
+    volume_flag="-v"
+fi
 
-echo "running: $command"
-eval $command
+echo running: okteto pipeline destroy $log_level --name "${name}" ${params} $volume_flag --wait
+okteto pipeline destroy $log_level --name "${name}" ${params} $volume_flag --wait

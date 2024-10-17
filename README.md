@@ -25,6 +25,10 @@ The Okteto namespace to use. If not specified it will use the namespace specifie
 
 Log level used. Supported values are: `debug`, `info`, `warn`, `error`. (defaults to warn)
 
+### `remove-volumes`
+
+Set to `true` to remove associated volumes on destroy (defaults to `false`).
+
 # Example usage
 
 This example runs the login action, activates a namespace, and triggers the Okteto pipeline and deletes it
