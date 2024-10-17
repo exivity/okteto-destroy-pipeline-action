@@ -10,8 +10,8 @@ inputs:
   log-level:
     description: "Log level string. Valid options are debug, info, warn, error"
     required: false
-  remove-volumes:
-    description: "Set to true to remove associated volumes on destroy"
+  destroy-volumes:
+    description: "Set to true to destroy the persistent volumes created by the development environment"
     required: false
     default: 'false'
 runs:

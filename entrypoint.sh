@@ -1,7 +1,7 @@
 name=$1
 namespace=$2
 log_level=$3
-remove_volumes=$4
+destroy_volumes=$4
 
 params=""
 if [ ! -z $namespace ]; then
@@ -24,7 +24,7 @@ if [ "${RUNNER_DEBUG}" = "1" ]; then
   log_level="--log-level debug"
 fi
 
-if [ "$remove_volumes" = "true" ]; then
+if [ "$destroy_volumes" = "true" ]; then
   volume_flag="-v"
 fi
 
