@@ -21,7 +21,7 @@ runs:
     - ${{ inputs.name }}
     - ${{ inputs.namespace }}
     - ${{ inputs.log-level }}
-    - ${{ inputs.remove-volumes }}
+    - ${{ inputs.destroy-volumes }}
 branding:
   color: 'green'
   icon: 'settings'
