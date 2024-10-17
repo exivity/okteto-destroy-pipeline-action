@@ -1,3 +1,6 @@
+#!/bin/sh
+set -e
+
 name=$1
 namespace=$2
 log_level=$3
